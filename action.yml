@@ -1,0 +1,12 @@
+name: "Validate Web-App Version"
+description: "Validate version from package.json, based on branch"
+inputs:
+  version:
+    description: "Version from package.json"
+    required: true
+outputs:
+  time: # id of output
+    description: "The time we greeted you"
+runs:
+  using: "node20"
+  main: "index.js"
