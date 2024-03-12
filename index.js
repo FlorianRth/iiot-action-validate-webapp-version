@@ -26,14 +26,31 @@ const stripVersion = (version) => {
   };
 };
 
+const validateVersion = (strippedVersion, prBase) => {
+  if (prBase === "main" || prBase === "master") {
+    if (strippedVersion.isPreview) {
+      core.setFailed("Cannot merge preview version into main / master");
+    }
+  }
+  if (prBase === "develop") {
+    if (!strippedVersion.isPreview) {
+      core.setFailed("Cannot merge non-preview version into develop");
+    }
+  }
+};
+
 try {
   const prBase = core.getInput("pr-base");
   const version = core.getInput("version");
 
-  console.log("versionInput: ", version);
-  console.log("prInput: ", prBase);
+  console.log(
+    "Base from Github object: ",
+    github.context.payload.sender.prBase
+  );
 
   const strippedVersion = stripVersion(version);
+
+  validateVersion(strippedVersion, prBase);
 
   console.log("Major: ", strippedVersion.major);
   console.log("Minor: ", strippedVersion.minor);

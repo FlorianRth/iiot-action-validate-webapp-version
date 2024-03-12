@@ -8,10 +8,6 @@ inputs:
     description: "Branch in which the pull request will merge"
     required: true
 
-outputs:
-  time: # id of output
-    description: "The time we greeted you"
-
 runs:
   using: "node20"
   main: "index.js"
