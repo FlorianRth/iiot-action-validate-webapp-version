@@ -35,11 +35,11 @@ try {
 
   const strippedVersion = stripVersion(version);
 
-  console.log("Major: ", stripVersion.major);
-  console.log("Minor: ", stripVersion.minor);
-  console.log("Patch: ", stripVersion.patch);
-  console.log("isPreview: ", stripVersion.isPreview);
-  console.log("previewVersion: ", stripVersion.previewVersion);
+  console.log("Major: ", strippedVersion.major);
+  console.log("Minor: ", strippedVersion.minor);
+  console.log("Patch: ", strippedVersion.patch);
+  console.log("isPreview: ", strippedVersion.isPreview);
+  console.log("previewVersion: ", strippedVersion.previewVersion);
 
   console.log("PR-Into: ", prHead);
 } catch (error) {
