@@ -30,6 +30,9 @@ try {
   const prHead = core.getInput("pr-head");
   const version = core.getInput("version");
 
+  console.log("versionInput: ", version);
+  console.log("prInput: ", prHead);
+
   const strippedVersion = stripVersion(version);
 
   console.log("Major: ", stripVersion.major);
