@@ -4,7 +4,7 @@ inputs:
   version:
     description: "Version from package.json"
     required: true
-  pr-head:
+  pr-base:
     description: "Branch in which the pull request will merge"
     required: true
 

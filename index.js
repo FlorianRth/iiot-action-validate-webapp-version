@@ -27,7 +27,7 @@ const stripVersion = (version) => {
 };
 
 try {
-  const prHead = core.getInput("pr-head");
+  const prBase = core.getInput("pr-base");
   const version = core.getInput("version");
 
   console.log("versionInput: ", version);
@@ -41,7 +41,7 @@ try {
   console.log("isPreview: ", strippedVersion.isPreview);
   console.log("previewVersion: ", strippedVersion.previewVersion);
 
-  console.log("PR-Into: ", prHead);
+  console.log("PR-Into: ", prBase);
 } catch (error) {
   core.setFailed(error.message);
 }
