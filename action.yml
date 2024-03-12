@@ -4,9 +4,14 @@ inputs:
   version:
     description: "Version from package.json"
     required: true
+  pr-head:
+    description: "Branch in which the pull request will merge"
+    required: true
+
 outputs:
   time: # id of output
     description: "The time we greeted you"
+
 runs:
   using: "node20"
   main: "index.js"
