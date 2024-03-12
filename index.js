@@ -31,7 +31,7 @@ try {
   const version = core.getInput("version");
 
   console.log("versionInput: ", version);
-  console.log("prInput: ", prHead);
+  console.log("prInput: ", prBase);
 
   const strippedVersion = stripVersion(version);
 
