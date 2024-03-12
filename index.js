@@ -37,6 +37,8 @@ try {
   console.log("Patch: ", stripVersion.patch);
   console.log("isPreview: ", stripVersion.isPreview);
   console.log("previewVersion: ", stripVersion.previewVersion);
+
+  console.log("PR-Into: ", prHead);
 } catch (error) {
   core.setFailed(error.message);
 }
